@@ -1,0 +1,2910 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Crow</name>
+    </assembly>
+    <members>
+        <member name="T:Crow.Unit">
+            <summary>
+            Measurement unit
+            </summary>
+        </member>
+        <member name="T:Crow.Measure">
+            <summary>
+            Measure class allow proportional sizes as well as stretched and fit on content.
+            </summary>
+        </member>
+        <member name="F:Crow.Measure.Value">
+            <summary>
+            Integer value of the measure
+            </summary>
+        </member>
+        <member name="F:Crow.Measure.Units">
+            <summary>
+            Measurement unit
+            </summary>
+        </member>
+        <member name="F:Crow.Measure.Fit">
+            <summary>
+            Fit on content, this special measure is defined as a fixed integer set to -1 pixel
+            </summary>
+        </member>
+        <member name="F:Crow.Measure.Stretched">
+            <summary>
+            Stretched into parent client area. This special measure is defined as a proportional cote
+            set to 100 Percents
+            </summary>
+        </member>
+        <member name="P:Crow.Measure.IsFixed">
+            <summary>
+            True is size is fixed in pixels, this means not proportional, stretched nor fit.
+            </summary>
+        </member>
+        <member name="P:Crow.Measure.IsRelativeToParent">
+            <summary>
+            True if width is proportional to parent client rectangle
+            </summary>
+        </member>
+        <member name="M:Crow.CairoHelpers.ToUtf8(System.String)">
+            <summary>
+            Convert string to utf8 (extension method)
+            </summary>
+            <returns>byte array with utf8 encoding</returns>
+        </member>
+        <member name="T:Crow.Color">
+            <summary>
+            Universal Color structure
+            </summary>
+        </member>
+        <member name="P:Crow.Color.Hue">
+            <summary>
+            compute the hue of the color
+            </summary>
+        </member>
+        <member name="P:Crow.Color.Saturation">
+            <summary>
+            compute the saturation of the color
+            </summary>
+        </member>
+        <member name="P:Crow.Color.Value">
+            <summary>
+            compute the RGB intensity of the color
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:Crow.Color.AdjustAlpha(System.Double)">
+            <summary>
+            return a copy of the color with the alpha component modified
+            </summary>
+            <returns>new modified color</returns>
+            <param name="_A">normalized alpha component</param>
+        </member>
+        <member name="T:Crow.ActionCommand">
+            <summary>
+            helper class to bind in one step icon, caption, action, and validity tests to a controls
+            </summary>
+        </member>
+        <member name="M:Crow.ActionCommand.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of Command with the action passed as argument.
+            </summary>
+            <param name="_executeAction">action to excecute when command is triggered</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Crow.ActionCommand.#ctor(System.Action{System.Object})" -->
+        <member name="M:Crow.ActionCommand.Execute(System.Object)">
+            <summary>
+            trigger the execution of the command
+            </summary>
+        </member>
+        <member name="T:Crow.Command">
+            <summary>
+            Base abstract class for commands with an execute method.
+            </summary>
+        </member>
+        <member name="P:Crow.Command.CanExecute">
+            <summary>
+            if true, command may be executed,
+            </summary>
+        </member>
+        <member name="M:Crow.Command.Execute(System.Object)">
+            <summary>
+            trigger the execution of the command
+            </summary>
+        </member>
+        <member name="T:Crow.CommandBase">
+            <summary>
+            Base class for Command and CommandGroup.
+            </summary>
+        </member>
+        <member name="P:Crow.CommandBase.Caption">
+            <summary>
+            label to display in the bound control
+            </summary>
+        </member>
+        <member name="P:Crow.CommandBase.Icon">
+            <summary>
+            Icon to display in the bound control
+            </summary>
+        </member>
+        <member name="M:Crow.CommandGroup.ToggleAllCommand(System.Boolean)">
+            <summary>
+            Set boolean value for the CanExecute state of all commands
+            </summary>
+            <param name="canExecute"></param>
+        </member>
+        <member name="T:Crow.ToggleCommand">
+            <summary>
+            helper class to bind in one step icon, caption, action, and validity tests to a controls
+            </summary>
+        </member>
+        <member name="M:Crow.ToggleCommand.Execute(System.Object)">
+            <summary>
+            trigger the execution of the command
+            </summary>
+        </member>
+        <member name="T:Crow.ConfigItem">
+            <summary>
+            single element of configuration
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Crow.Configuration" -->
+        <member name="M:Crow.Configuration.#ctor(System.IO.Stream)">
+            <summary>
+            Create readonly configuration
+            </summary>
+            <param name="defaultConf"></param>
+        </member>
+        <member name="M:Crow.Configuration.Get``1(System.String)">
+            <summary>
+            retrive the value of the configuration key given in parameter
+            </summary>
+            <param name="key">option name</param>
+        </member>
+        <member name="M:Crow.Configuration.Get``1(System.String,``0)">
+            <summary>
+            retrive the value of the configuration key given in parameter
+            </summary>
+            <param name="key">option name</param>
+        </member>
+        <member name="M:Crow.Configuration.Set``1(System.String,``0)">
+            <summary>
+            store the value of the configuration key given in parameter
+            </summary>
+            <param name="key">option name</param>
+            <param name="value">value for that option</param>
+        </member>
+        <member name="T:Crow.CrowAttribute">
+            <summary>
+            Add this attribute to an assembly to have it search for Crow ressources (.style, images, templates,...)
+            </summary>
+            <remarks>
+            By default, only the entry assembly and the crow assembly will be searched for resources.
+            </remarks>
+        </member>
+        <member name="T:Crow.CrowThread">
+            <summary>
+            Thread monitored by current interface with Finished event when state==Stopped
+            </summary>
+        </member>
+        <member name="T:Crow.DebugLogger.DbgWidgetRecord">
+            <summary>
+            Recorded Widget instance data.
+            </summary>
+        </member>
+        <member name="M:Crow.DbgLogger.AddEvent(Crow.DbgEvtType,System.Object[])">
+            <summary>
+            End event by reference to cancel unended events on failure
+            </summary>
+        </member>
+        <member name="M:Crow.DbgLogger.Reset">
+            <summary>
+            Clear all recorded events from logger.
+            </summary>
+        </member>
+        <member name="M:Crow.DbgLogger.Save(Crow.Interface,System.String)">
+            <summary>
+            Save recorded events to disk
+            </summary>
+            <param name="iface">Iface.</param>
+        </member>
+        <member name="T:Crow.CursorType">
+            <summary>
+            Cursor shape use in Sliders
+            </summary>
+        </member>
+        <member name="F:Crow.CursorType.None">
+            <summary>Only Background of cursor will be drawm, you may use a bmp, svg, or shape as background for custom shape.</summary>
+        </member>
+        <member name="T:Crow.ColorComponent">
+            <summary>
+            Color component used in color widgets
+            </summary>
+        </member>
+        <member name="F:Crow.DragDropEventArgs.DragSource">
+            <summary>
+            Source of the drag and drop operation
+            </summary>
+        </member>
+        <member name="F:Crow.DragDropEventArgs.DropTarget">
+            <summary>
+            Target of the drag and drop operation
+            </summary>
+        </member>
+        <member name="M:Crow.DragDropEventArgs.#ctor(Crow.Widget,Crow.Widget)">
+            <summary>
+            Create a new instance of DragDropEventArgs.
+            </summary>
+            <param name="source">the widget instance source of the event</param>
+            <param name="target">the target widget of the event</param>
+        </member>
+        <member name="T:Crow.LayoutingEventArgs">
+            <summary>
+            Event argument for layouting events.
+            </summary>
+        </member>
+        <member name="F:Crow.LayoutingEventArgs.LayoutType">
+            <summary>
+            The layout type that has changed.
+            </summary>
+        </member>
+        <member name="M:Crow.LayoutingEventArgs.#ctor(Crow.LayoutingType)">
+            <summary>
+            Create a new instance of LayoutingEventArgs.
+            </summary>
+            <param name="_layoutType">The layout type that trigger the event.</param>
+        </member>
+        <member name="T:Crow.MouseCursorChangedEventArgs">
+            <summary>
+            Occurs when the mouse cursor changes.
+            </summary>
+        </member>
+        <member name="T:Crow.SelectedTextChangeEventArgs">
+            <summary>
+            Occurs in the TextBox widget when the text has changed.
+            </summary>
+        </member>
+        <member name="F:Crow.SelectedTextChangeEventArgs.Old">
+            <summary>
+            The TextChange structure representing the change.
+            </summary>
+        </member>
+        <member name="T:Crow.SelectionChangeEventArgs">
+            <summary>
+            Occurs when the selection has changed.
+            </summary>
+        </member>
+        <member name="T:Crow.TextChangeEventArgs">
+            <summary>
+            Occurs in the TextBox widget when the text has changed.
+            </summary>
+        </member>
+        <member name="F:Crow.TextChangeEventArgs.Change">
+            <summary>
+            The TextChange structure representing the change.
+            </summary>
+        </member>
+        <member name="T:Crow.TextSelectionChangeEventArgs">
+            <summary>
+            Occurs in the TextBox widget and Label when the current selected text has changed.
+            </summary>
+        </member>
+        <member name="F:Crow.TextSelectionChangeEventArgs.Selection">
+            <summary>
+            The text span of the current selection.
+            </summary>
+        </member>
+        <member name="F:Crow.TreeExpandEventArg.SourceWidget">
+            <summary>
+            Source of the expand/collapse event
+            </summary>
+        </member>
+        <member name="T:Crow.ValidateEventArgs">
+            <summary>
+            Occurs in the TextBox widget when the text has changed. Contains the 
+            validated text.
+            </summary>
+        </member>
+        <member name="F:Crow.ValidateEventArgs.ValidatedText">
+            <summary>
+            The validated text.
+            </summary>
+        </member>
+        <member name="T:Crow.ValueChangeEventArgs">
+            <summary>
+            Arguments for the ValueChange event used for Binding
+            </summary>
+        </member>
+        <member name="F:Crow.ValueChangeEventArgs.MemberName">
+            <summary>The name of the member whose value has changed</summary>
+        </member>
+        <member name="F:Crow.ValueChangeEventArgs.NewValue">
+            <summary>New value for that member</summary>
+        </member>
+        <member name="M:Crow.ValueChangeEventArgs.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.ValueChangeEventArgs"/> class.
+            </summary>
+            <param name="_memberName">Member name.</param>
+            <param name="_newValue">New value.</param>
+        </member>
+        <member name="T:Crow.BmpPicture">
+            <summary>
+            Derived from FILL for loading and drawing bitmaps in the interface
+            </summary>
+        </member>
+        <member name="M:Crow.BmpPicture.#ctor">
+            <summary>
+            Initializes a new instance of BmpPicture.
+            </summary>
+        </member>
+        <member name="M:Crow.BmpPicture.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of BmpPicture by loading the image pointed by the path argument
+            </summary>
+            <param name="path">image path, may be embedded</param>
+        </member>
+        <member name="M:Crow.BmpPicture.load(Crow.Interface)">
+            <summary>
+            load the image for rendering from the path given as argument
+            </summary>
+        </member>
+        <member name="M:Crow.BmpPicture.Paint(Crow.Interface,Crow.Drawing.Context,Crow.Rectangle,System.String)">
+            <summary>
+            paint the image in the rectangle given in arguments according
+            to the Scale and keepProportion parameters.
+            </summary>
+            <param name="gr">drawing Backend context</param>
+            <param name="rect">bounds of the target surface to paint</param>
+            <param name="subPart">used for svg only</param>
+        </member>
+        <member name="T:Crow.Fill">
+            <summary>
+            base class for drawing content to paint on backend
+            </summary>
+        </member>
+        <member name="M:Crow.Fill.SetAsSource(Crow.Interface,Crow.Drawing.Context,Crow.Rectangle)">
+            <summary>
+            set content of fill as source for drawing operations on the backend context
+            </summary>
+            <param name="ctx">backend context</param>
+            <param name="bounds">paint operation bounding box, unused for SolidColor</param>
+        </member>
+        <member name="T:Crow.sharedPicture">
+            <summary>
+            store data and dimensions for resource sharing
+            </summary>
+        </member>
+        <member name="T:Crow.Picture">
+            <summary>
+            virtual class for loading and drawing picture in the interface
+            
+            Every loaded resources are stored in a dictonary with their path as key and shared
+            among interface elements
+            </summary>
+        </member>
+        <member name="F:Crow.Picture.Path">
+            <summary>
+            path of the picture
+            </summary>
+        </member>
+        <member name="P:Crow.Picture.Dimensions">
+            <summary>
+            unscaled dimensions fetched on loading
+            </summary>
+        </member>
+        <member name="F:Crow.Picture.KeepProportions">
+            <summary>
+            if true and image has to be scalled, it will be scaled in both direction
+            equaly
+            </summary>
+        </member>
+        <member name="F:Crow.Picture.Scaled">
+            <summary>
+            allow or not the picture to be scalled on request by the painter
+            </summary>
+        </member>
+        <member name="M:Crow.Picture.#ctor">
+            <summary>
+            Initializes a new instance of Picture.
+            </summary>
+        </member>
+        <member name="M:Crow.Picture.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Picture by loading the image pointed by the path argument
+            </summary>
+            <param name="path">image path, may be embedded</param>
+        </member>
+        <member name="M:Crow.Picture.Paint(Crow.Interface,Crow.Drawing.Context,Crow.Rectangle,System.String)">
+            <summary>
+            abstract method to paint the image in the rectangle given in arguments according
+            to the Scale and keepProportion parameters.
+            </summary>
+            <param name="gr">drawing Backend context</param>
+            <param name="rect">bounds of the target surface to paint</param>
+            <param name="subPart">used for svg only</param>
+        </member>
+        <member name="T:Crow.SvgPicture">
+            <summary>
+            Derived from FILL for loading and drawing SVG images in the interface
+            </summary>
+        </member>
+        <member name="M:Crow.SvgPicture.#ctor">
+            <summary>
+            Initializes a new instance of SvgPicture.
+            </summary>
+        </member>
+        <member name="M:Crow.SvgPicture.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of SvgPicture by loading the SVG file pointed by the path argument
+            </summary>
+            <param name="path">image path, may be embedded</param>
+        </member>
+        <member name="M:Crow.SvgPicture.Paint(Crow.Interface,Crow.Drawing.Context,Crow.Rectangle,System.String)">
+            <summary>
+            paint the image in the rectangle given in arguments according
+            to the Scale and keepProportion parameters.
+            </summary>
+            <param name="gr">drawing Backend context</param>
+            <param name="rect">bounds of the target surface to paint</param>
+            <param name="subPart">limit rendering to this coma separated list of svg part identified with their svg 'id' attribute.</param>
+        </member>
+        <member name="T:Crow.IML.BindingDefinition">
+            <summary>
+            store binding source and target addresses and member names
+            </summary>
+        </member>
+        <member name="M:Crow.IML.BindingDefinition.ResolveTargetName(Crow.IML.NodeAddress)">
+            <summary>
+            replace the target node address with corresponding named node address, and clear the target name once resolved
+            </summary>
+            <param name="newTargetNA">Named Node</param>
+        </member>
+        <member name="T:Crow.IML.BindingMember">
+            <summary>
+            Binding expression parser.
+            
+            Valid tokens in binding expression:
+            - '../' => 1 level up in graphic tree
+            - './' or '/' => template root level
+            - '.Name1.Name2' current level properties
+            - 'name.prop' named descendant in graphic tree, search with 'FindByName' method of Widget
+            </summary>
+        </member>
+        <member name="F:Crow.IML.BindingMember.IsStringConstant">
+            <summary>
+            true if expression was enclosed in '
+            </summary>
+        </member>
+        <member name="F:Crow.IML.BindingMember.LevelsUp">
+            <summary>
+            Nb level to go up, '-1' for template root
+            </summary>
+        </member>
+        <member name="F:Crow.IML.BindingMember.Tokens">
+            <summary>
+            Remaining string after '/' split, splitted on '.'
+            </summary>
+        </member>
+        <member name="P:Crow.IML.BindingMember.IsTemplateBinding">
+            <summary>
+            Target the template's root node, expression was in the form './name[.name[...]]' or '/name[.name[...]]'
+            </summary>
+        </member>
+        <member name="P:Crow.IML.BindingMember.IsCurrentNodeProperty">
+            <summary>
+            No level change and expression was '.name'
+            </summary>
+            <value><c>true</c> if this instance is current node property; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Crow.IML.BindingMember.IsSingleName">
+            <summary>
+            no level change, and only a single name in Tokens[], that's dataSource member if property binding
+            </summary>
+        </member>
+        <member name="M:Crow.IML.BindingMember.#ctor">
+            <summary>
+            Initializes a new instance of BindingMember.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.BindingMember.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of BindingMember by parsing the string passed as argument
+            </summary>
+            <param name="expression">binding expression</param>
+        </member>
+        <member name="M:Crow.IML.BindingMember.emitGetTarget(System.Reflection.Emit.ILGenerator,System.Reflection.Emit.Label,Crow.IML.NodeAddress)">
+            <summary>
+            Emits the MSIL instructions to get the target of the binding expression
+            </summary>
+            <param name="il">current MSIL generator</param>
+            <param name="cancel">cancel branching in MSIL if something go wrong</param>
+            <param name="currentNode">if levelUp is 0, node is templated target is not simple name, name
+            is search in the current node template content, which is avoid normaly.</param>
+        </member>
+        <member name="M:Crow.IML.BindingMember.emitGetProperty(System.Reflection.Emit.ILGenerator,System.Reflection.Emit.Label)">
+            <summary>
+            Emit the MSIL instructions to get the target property of the binding expression
+            </summary>
+            <param name="il">current MSIL generator</param>
+            <param name="cancel">cancel branching in MSIL if something go wrong</param>
+        </member>
+        <member name="M:Crow.IML.BindingMember.emitSetProperty(System.Reflection.Emit.ILGenerator)">
+            <summary>
+            Emit the MSIL instructions to set the target property of the binding expression
+            </summary>
+            <param name="il">current MSIL generator</param>
+        </member>
+        <member name="F:Crow.IML.CompilerServices.knownTypes">
+            <summary>
+            known types cache, prevent rewalking all the assemblies of the domain
+            the key is the type simple name
+            </summary>
+        </member>
+        <member name="F:Crow.IML.CompilerServices.knownExtMethods">
+            <summary>
+            known extension methods.
+            key is type dot memberName.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitSetCurInterface(System.Reflection.Emit.ILGenerator)">
+            <summary>
+            Loc0 is the current graphic object and arg2 of loader is the current interface
+            </summary>
+            <param name="il">Il.</param>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.setValueWithReflexion(System.Object,System.Object,System.String)">
+            <summary>
+            set value, convert if required
+            </summary>
+            <param name="dest">Destination instance</param>
+            <param name="value">Value</param>
+            <param name="destMember">Destination member</param>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.getValueWithReflexion(System.Object,System.Reflection.MemberInfo)">
+            <summary>
+            Gets value with reflexion, return empty string ("") for string and object and return
+            default value for valueType data.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.getEventHandlerField(System.Type,System.String)">
+            <summary>
+            retrieve event handler in class or ancestors
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.getImplicitOp(System.Type,System.Type)">
+            <summary>
+            search for an implicit conversion method in origine or destination classes
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitGetInstance(System.Reflection.Emit.ILGenerator,Crow.IML.NodeAddress,Crow.IML.NodeAddress)">
+            <summary>
+            Emits tree parsing command to fetch dest instance starting from orig node
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitGetInstance(System.Reflection.Emit.ILGenerator,Crow.IML.NodeAddress)">
+            <summary>
+            Emits tree parsing commands to get child starting at root node
+            </summary>
+            <param name="il">MSIL generator</param>
+            <param name="dest">Absolute Node Address of the instance to get</param>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitGetChild(System.Reflection.Emit.ILGenerator,System.Type,System.Int32)">
+            <summary>
+            Emits msil to fetch chil instance of current Widget on the stack
+            </summary>
+            <param name="il">Il generator</param>
+            <param name="parentType">Parent type</param>
+            <param name="index">Index of child, -1 for template root</param>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitConvert(System.Reflection.Emit.ILGenerator,System.Type,System.Type)">
+            <summary>
+            Emit MSIL for conversion from orig type to dest type
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.emitConvert(System.Reflection.Emit.ILGenerator,System.Type)">
+            <summary>
+            check type of current object on the stack and convert to dest type,
+            use loc_0 so store it as object!!!
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.removeEventHandlerByName(System.Object,System.String,System.String)">
+            <summary>
+            Removes delegate from event handler by name
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.removeEventHandlerByTarget(System.Object,System.String,System.Object)">
+            <summary>
+            Removes delegate from event handler by searching for the object they are bond to
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.createDel(System.Object,System.Type,System.String)">
+            <summary>
+            create delegate helper
+            </summary>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.goUpNbLevels(Crow.ILayoutable,System.Int32)">
+            <summary>
+            MSIL helper, go n levels up
+            </summary>
+            <returns><c>true</c>, if logical parents are not null</returns>
+            <param name="instance">Start Instance</param>
+            <param name="levelCount">Levels to go upward</param>
+        </member>
+        <member name="M:Crow.IML.CompilerServices.getTypeFromName(System.String)">
+            <summary>
+            Try to get the type named strDataType, search first in crow assembly then in
+            entry assembly.
+            </summary>
+            <returns>the corresponding type object if found</returns>
+            <param name="strDataType">type name</param>
+        </member>
+        <member name="T:Crow.IML.IMLContext">
+            <summary>
+            Context while parsing IML, this will store what's needed only while parsing and not during instancing
+            </summary>
+        </member>
+        <member name="F:Crow.IML.IMLContext.Names">
+            <summary> store addresses of named node for name resolution at end of parsing </summary>
+        </member>
+        <member name="F:Crow.IML.IMLContext.Bindings">
+            <summary> Store non datasource binding (in tree and template) by origine and orig member </summary>
+        </member>
+        <member name="F:Crow.IML.IMLContext.UnresolvedTargets">
+            <summary> Store binding with name in target, will be resolved at end of parsing </summary>
+        </member>
+        <member name="M:Crow.IML.IMLContext.PushNode(System.Type,System.Int32)">
+            <summary>
+            Pushs  new node and set datasourcetype to current ds type
+            </summary>
+            <param name="crowType">Crow type.</param>
+            <param name="_index">Index.</param>
+        </member>
+        <member name="M:Crow.IML.IMLContext.PopNode">
+            <summary>
+            Pops node and set curDS type to previous one in node on top of the stack
+            </summary>
+            <returns>The node.</returns>
+        </member>
+        <member name="M:Crow.IML.IMLContext.StoreCurrentName(System.String)">
+            <summary>
+            Stores all the names found in current iml for binding resolution if any of them
+            are targeting named widget
+            </summary>
+        </member>
+        <member name="M:Crow.IML.IMLContext.emitCachedDelegateHandlerAddition(System.Int32,System.Reflection.EventInfo,Crow.IML.NodeAddress)">
+            <summary>
+            Emits cached delegate handler addition in the context of instantiator (ctx)
+            </summary>
+        </member>
+        <member name="M:Crow.IML.IMLContext.emitHandlerMethodAddition(Crow.IML.EventBinding)">
+            <summary>
+            Emits the handler method addition, done at end of parsing, Loc_0 is root node instance
+            </summary>
+            <param name="bd">Bd.</param>
+        </member>
+        <member name="T:Crow.IML.Instantiator">
+             <summary>
+             Reflection being very slow, the settings of the starting values for widgets are set by a dynamic method.
+             This method is created on the first instacing and is recalled for further widget instancing.
+            
+             It includes:
+             	- XML values setting
+             	- Default values (appearing as attribute in C#)  loading
+             	- Styling
+            
+             Their are stored in the Interface with their path as key, and inlined template
+             and itemtemplate are stored with a generated uuid
+             </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.#ctor(Crow.Interface,System.String)">
+            <summary>
+            Initializes a new instance of the Instantiator class.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.#ctor(Crow.Interface,System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the Instantiator class.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.#ctor(Crow.Interface,System.Xml.XmlReader)">
+            <summary>
+            Initializes a new instance of the Instantiator class with an already openned xml reader
+            positionned on the start tag inside the itemTemplate
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.CreateFromImlFragment(Crow.Interface,System.String)">
+            <summary>
+            Create a new instantiator from IML fragment provided directely as a string
+            </summary>
+            <returns>A new instantiator</returns>
+            <param name="fragment">IML string</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.CreateInstance">
+            <summary>
+            Creates a new instance of the Widget compiled in the instantiator
+            </summary>
+            <returns>The new graphic object instance</returns>
+        </member>
+        <member name="M:Crow.IML.Instantiator.CreateInstance``1">
+            <summary>
+            Creates a new instance of T compiled in the instantiator
+            and bind it the an interface
+            </summary>
+            <returns>The new T instance</returns>
+        </member>
+        <member name="F:Crow.IML.Instantiator.templateCachedDelegateIndices">
+            <summary>
+            store indices of template delegate to be handled by root parentChanged event
+            </summary>
+        </member>
+        <member name="F:Crow.IML.Instantiator.templateBinding">
+            <summary>
+            Store template bindings in the instantiator
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.parseIML(System.Xml.XmlReader)">
+            <summary>
+            Parses IML and build a dynamic method that will be used to instantiate one or multiple occurences of the IML file or fragment
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.findRootType(System.Xml.XmlReader)">
+            <summary>
+            read first node to set Widget class for loading
+            and let reader position on that node
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitLoader(System.Xml.XmlReader,Crow.IML.IMLContext)">
+            <summary>
+            main parsing entry point
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.parseItemTemplateTag(Crow.Interface,System.Xml.XmlReader,System.String)">
+            <summary>
+            Parses the item template tag.
+            </summary>
+            <returns>the string triplet dataType, itemTmpID read as attribute of this tag</returns>
+            <param name="reader">current xml text reader</param>
+            <param name="itemTemplatePath">file containing the templates if its a dedicated one</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitTemplateLoad(Crow.IML.IMLContext,System.String)">
+            <summary>
+            process template and item template definition prior to
+            other attributes or childs processing
+            </summary>
+            <param name="ctx">Loading Context</param>
+            <param name="tmpXml">xml fragment</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitGOLoad(Crow.IML.IMLContext,System.String)">
+            <summary>
+            process styling, attributes and children loading.
+            </summary>
+            <param name="ctx">parsing context</param>
+            <param name="tmpXml">xml fragment</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.readChildren(System.Xml.XmlReader,Crow.IML.IMLContext,System.Int32)">
+            <summary>
+            Parse child node an generate corresponding msil
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.readPropertyBinding(Crow.IML.IMLContext,System.String,System.String)">
+            <summary>
+            Reads binding expression found as attribute value in iml
+            </summary>
+            <param name="ctx">IML Context</param>
+            <param name="sourceMember">IML Attribute name</param>
+            <param name="expression">Binding Expression with accollades trimed</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.dataSourceChangedEmitHelper(System.Object,System.Object,System.Int32)">
+            <summary>
+            Create delegate from cached dyn method, delegate is bound to the datasource change sender.
+            </summary>
+            <param name="dscSource">data source change sender</param>
+            <param name="dataSource">new Data source.</param>
+            <param name="dynMethIdx">Dyn meth index in the dsValueChangedDynMeths array</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitRemoveOldDataSourceHandler(System.Reflection.Emit.ILGenerator,System.String,System.String,System.Boolean)">
+            <summary> Emits remove old data source event handler.</summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.compileAndStoreDynHandler(Crow.IML.IMLContext,System.Reflection.EventInfo,System.String)">
+            <summary>
+            Compile events expression in IML attributes, and store the result in the instanciator
+            Those handlers will be bound when instatiing
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitHandlerBinding(Crow.IML.IMLContext,System.Reflection.EventInfo,System.String)">
+            <summary> Emits handler method bindings </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitBindingDelegates(Crow.IML.IMLContext)">
+            <summary>
+            Create and store in the instanciator the ValueChanged delegates
+            those delegates uses grtree functions to set destination value so they don't
+            need to be bound to destination instance as in the ancient system.
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitDataSourceBindings(Crow.IML.IMLContext,Crow.IML.BindingDefinition,System.Type)">
+            <summary>
+            data source binding with known data type
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitDataSourceBindings(Crow.IML.IMLContext,Crow.IML.BindingDefinition)">
+            <summary>
+            data source binding with unknown data type.
+            create the valuechanged handler, the datasourcechanged handler and emit event handling
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.emitDataSourceBindings(System.Reflection.PropertyInfo,Crow.IML.BindingDefinition)">
+            <summary>
+            create the valuechanged handler and the datasourcechanged handler and return the
+            DataSourceChange delegate
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Instantiator.dataSourceReverseBinding(System.String,Crow.IValueChange,System.String,System.Object,System.String)">
+            <summary>
+            Two way binding for datasource, graphicObj=>dataSource link, datasource value has priority
+            and will be set as init for source property (in emitDataSourceBindings func)
+            </summary>
+            <param name="delName">delegate name</param>
+            <param name="orig">Graphic object instance, source of binding</param>
+            <param name="origMember">Origin member name</param>
+            <param name="dest">datasource instance, target of the binding</param>
+            <param name="destMember">Destination member name</param>
+        </member>
+        <member name="M:Crow.IML.Instantiator.GetWidgetTypeFromName(System.String)">
+            <summary>
+            search for graphic object type in crow assembly, if not found,
+            search for type independently of namespace in all the loaded assemblies
+            </summary>
+            <remarks>
+            </remarks>
+            <returns>the corresponding type object</returns>
+            <param name="typeName">graphic object type name without its namespace</param>
+        </member>
+        <member name="T:Crow.IML.MemberAddress">
+            <summary>
+            Address member of a node
+            </summary>
+        </member>
+        <member name="T:Crow.IML.Node">
+            <summary>
+            IML Node are defined with a type and the index in the parent,
+            </summary>
+        </member>
+        <member name="F:Crow.IML.Node.CrowType">
+            <summary> Current node type</summary>
+        </member>
+        <member name="F:Crow.IML.Node.Index">
+            <summary> Index in parent, -1 for template</summary>
+        </member>
+        <member name="F:Crow.IML.Node.DataSourceType">
+            <summary>
+            DataSourceType attribute if set
+            </summary>
+        </member>
+        <member name="M:Crow.IML.Node.GetAddMethod(System.Int32)">
+            <summary>
+            retrieve the child addition method depending on the type of this node
+            </summary>
+            <returns>The child addition method</returns>
+            <param name="childIdx">child index or, template root node has index == -1</param>
+        </member>
+        <member name="T:Crow.IML.NodeAddress">
+            <summary>
+            Node address is a list of nodes from root to leaf defining a unique node
+            </summary>
+        </member>
+        <member name="M:Crow.IML.NodeAddress.ResolveExpression(System.String@)">
+            <summary>
+            Gets the node adress from binding expression starting from this node
+            and return in expression remaining part
+            </summary>
+        </member>
+        <member name="M:Crow.IML.NodeAddress.GetBindingDef(System.String,System.String)">
+            <summary>
+            get BindingDefinition from binding expression
+            </summary>
+        </member>
+        <member name="T:Crow.CrowEventArgs">
+            <summary>
+            Base class for Crow interface events.
+            </summary>
+            <remarks>
+            By default, device (mouse, keyboard) events are bubbled through the logical tree unless the `Handled` field
+            of the `CrowEventArgs` is set to `true`, or if an event handler is registered for the Event.
+            For example if you have a templated button that received a mouse
+            event in a `Label` widget inside its tempate, the event may be bubbled to the `Button` widget where a
+            `MouseClick` event may be registered which will cause the bubbling to stop at that level.
+            </remarks>
+        </member>
+        <member name="F:Crow.CrowEventArgs.Handled">
+            <summary>
+            If `true`, bubbling of the event through the logical widget tree is stopped
+            </summary>
+        </member>
+        <member name="T:Crow.KeyPressEventArgs">
+            <summary>
+            Defines the event arguments for KeyPress events. Instances of this class are cached:
+            KeyPressEventArgs should only be used inside the relevant event, unless manually cloned.
+            </summary>
+        </member>
+        <member name="M:Crow.KeyPressEventArgs.#ctor(System.Char)">
+            <summary>
+            Constructs a new instance.
+            </summary>
+            <param name="keyChar">The ASCII character that was typed.</param>
+        </member>
+        <member name="P:Crow.KeyPressEventArgs.KeyChar">
+            <summary>
+            Gets a <see cref="T:System.Char"/> that defines the ASCII character that was typed.
+            </summary>
+        </member>
+        <member name="T:Crow.Interface">
+             <summary>
+             Interface is the base class for building crow application.
+             It is thread safe allowing application to run multiple interfaces in different threads.
+             </summary>
+             <remarks>
+             The Interface contains :
+             	- rendering and layouting queues and logic.
+             	- helpers to load IML interfaces files directely bound to this interface
+             	- global static constants and variables of CROW
+             	- Keyboard and Mouse logic
+            
+             </remarks>
+        </member>
+        <member name="M:Crow.Interface.AddCrowAssembly(System.Reflection.Assembly)">
+            <summary>
+            Add Assembly that may contains CROW ui ressources like custom widget classes, IML, images, ...
+            Styling fond in those assemblies are automatically loaded on addition;
+            This assembly will be searched for embedded ressource resolution, extension methods, and custom widgets.
+            For those assemblies to be added by simple name, see 'CrowAssemblyNames'.
+            </summary>
+            <param name="a">The assembly to add.</param>
+        </member>
+        <member name="M:Crow.Interface.RemoveCrowAssembly(System.Reflection.Assembly)">
+            <summary>
+            Remove Assembly from the CrowAssembly list. See 'AddCrowAssembly' for details.
+            </summary>
+            <param name="a">The assembly to unload</param>
+        </member>
+        <member name="P:Crow.Interface.CrowAssemblyNames">
+            <summary>
+            Each time this array is set, the resolved Assemblies will be
+            added to the CrowAssemblies list, see 'AddCrowAssembly' for details.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Crow.Interface.#ctor(System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            Create a new Crow Interface by providing an existing valid GLFW window handle.
+            UI thread will not be started, and the main surface will not be initialized.
+            This is used to give crow support to existing glfw application by providing
+            a custom suface creation, and a custom update thread.
+            </summary>
+            <param name="width">the width of the window</param>
+            <param name="height">the height of the window</param>
+            <param name="glfwWindowHandle">A valid GLFW window handle</param>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Interface.#ctor(System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Create a standard Crow interface.
+            </summary>
+            <param name="width">the width of the native window</param>
+            <param name="height">the height of the native window</param>
+            <param name="startUIThread">If 'yes' start the ui update (InterfaceThread method) in a dedicated thread</param>
+            <param name="createSurface">If 'yes', create the main rendering surface on the native window</param>
+        </member>
+        <member name="F:Crow.Interface.windows">
+            GLFW callback may return a custom pointer, this list makes the link between the GLFW window pointer and the
+            			manage VkWindow instance. 
+        </member>
+        <member name="F:Crow.Interface.hWin">
+            GLFW window native pointer and current native handle for mouse cursor 
+        </member>
+        <member name="P:Crow.Interface.WindowHandle">
+            <summary>
+            Native GLFW window handle bound to this interface.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.registerGlfwCallbacks">
+            <summary>
+            Register GLFW window callbacs (mouse, keyboard, sizing, refresh).
+            This method is called on main surface initialization. To skip this step,
+            create the application with your own GLFW windows handle and setup the main
+            rendering surface by yourself.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.initSurface">
+            <summary>
+            Create the main rendering surface. The default is a GLFW window with a cairo surface bound to it.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.CreateMainSurface(Crow.Rectangle@)">
+            <summary>
+            ??
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="M:Crow.Interface.SetWindowIcon(System.String)">
+            <summary>
+            Set the main GLFW window icon.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="F:Crow.Interface.knownExtMethods">
+            <summary>
+            Cache already searched extension methods to prevent searching again and again for
+            missing method or to speedup loading once a method is found.
+            </summary>
+            <remarks>
+            This cache is reseted when a crow assembly is removed, or the theme is changed.
+            </remarks>
+        </member>
+        <member name="F:Crow.Interface.knownCrowWidgetTypes">
+            <summary>
+            Cache already searched widget types.
+            </summary>
+            <remarks>
+            This cache is reseted when a crow assembly is removed, or the theme is changed.
+            </remarks>
+        </member>
+        <member name="M:Crow.Interface.GetWidgetTypeFromName(System.String)">
+            <summary>
+            search for graphic object type in crow assembly, if not found,
+            search for type independently of namespace in all the loaded assemblies
+            </summary>
+            <remarks>
+            </remarks>
+            <returns>the corresponding type object</returns>
+            <param name="typeName">graphic object type name without its namespace</param>
+        </member>
+        <member name="M:Crow.Interface.Init">
+            <summary>
+            load styling, init default tooltips and context menus, load main.crow resource if exists.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.init_internal">
+            <summary>
+            Maybe called anytime to reset all Instantiators, Styles and Theme. Lock the UpdateMutex to
+            call it after the normal startup.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.Run">
+            <summary>
+            call Init() then enter the running loop performing ProcessEvents until running==false.
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.UPDATE_INTERVAL">
+            <summary>Time interval in milisecond between Updates of the interface</summary>
+        </member>
+        <member name="F:Crow.Interface.POLLING_INTERVAL">
+            <summary>
+            Time interval in milisecond between Glfw polling for devices. Wait is done in
+            the 'UpdateFrame' method in the 'Run' cycle and may be overriden.
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.CROW_CONFIG_ROOT">
+            <summary>Crow configuration root path</summary>
+        </member>
+        <member name="F:Crow.Interface.FOCUS_ON_HOVER">
+            <summary>If true, mouse focus is given when mouse is over control</summary>
+        </member>
+        <member name="F:Crow.Interface.RAISE_WIN_ON_FOCUS">
+            <summary>If true, newly focused window will be put on top</summary>
+        </member>
+        <member name="F:Crow.Interface.BorderThreshold">
+            <summary> Threshold to catch borders for sizing </summary>
+        </member>
+        <member name="F:Crow.Interface.TOOLTIP_DELAY">
+            <summary> delay before tooltip appears </summary>
+        </member>
+        <member name="F:Crow.Interface.DOUBLECLICK_TRESHOLD">
+            <summary>Double click threshold in milisecond</summary>
+        </member>
+        <member name="F:Crow.Interface.DEVICE_REPEAT_DELAY">
+            <summary> Time to wait in millisecond before starting repeat loop</summary>
+        </member>
+        <member name="F:Crow.Interface.DEVICE_REPEAT_INTERVAL">
+            <summary> Time interval in millisecond between device event repeat</summary>
+        </member>
+        <member name="F:Crow.Interface.TAB_SIZE">
+            <summary>Tabulation size in Text controls</summary>
+        </member>
+        <member name="F:Crow.Interface.DesignerMode">
+            <summary> Allow rendering of interface in development environment </summary>
+        </member>
+        <member name="F:Crow.Interface.MaxCacheSize">
+            <summary> Disable caching for a widget if this threshold is reached </summary>
+        </member>
+        <member name="F:Crow.Interface.MaxLayoutingTries">
+            <summary> Above this count, the layouting is discard from the current
+            update cycle and requeued for the next</summary>
+        </member>
+        <member name="F:Crow.Interface.MaxDiscardCount">
+            <summary> Above this count, the layouting is discard for the widget and it
+            will not be rendered on screen </summary>
+        </member>
+        <member name="F:Crow.Interface.FontRenderingOptions">
+            <summary> Global font rendering settings for Cairo </summary>
+        </member>
+        <member name="F:Crow.Interface.Antialias">
+            <summary> Global font rendering settings for Cairo </summary>
+        </member>
+        <member name="E:Crow.Interface.Initialized">
+            <summary>
+            Each control need a ref to the root interface containing it, if not set in Widget.currentInterface,
+            the ref of this one will be stored in Widget.currentInterface
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.surf">
+            <summary>Main Cairo surface</summary>
+        </member>
+        <member name="F:Crow.Interface.GraphicTree">
+            <summary>Graphic Tree of this interface</summary>
+        </member>
+        <member name="F:Crow.Interface.bmp">
+            <summary>Interface's resulting bitmap</summary>
+        </member>
+        <member name="F:Crow.Interface.dirtyBmp">
+            <summary>resulting bitmap limited to last redrawn part</summary>
+        </member>
+        <member name="F:Crow.Interface.IsDirty">
+            <summary>True when host has to repaint Interface</summary>
+        </member>
+        <member name="F:Crow.Interface.DirtyRect">
+            <summary>Coordinate of the dirty bmp on the original bmp</summary>
+        </member>
+        <member name="F:Crow.Interface.LayoutMutex">
+            <summary>Locked for each layouting operation</summary>
+        </member>
+        <member name="F:Crow.Interface.RenderMutex">
+            <summary>Sync mutex between host and Crow for rendering operations (bmp, dirtyBmp,...)</summary>
+        </member>
+        <member name="F:Crow.Interface.UpdateMutex">
+            <summary>Global lock of the update cycle</summary>
+        </member>
+        <member name="F:Crow.Interface.ClippingMutex">
+            <summary>Global lock of the clipping queue</summary>
+        </member>
+        <member name="F:Crow.Interface.Ressources">
+            <summary>
+            Store loaded resources instances shared among controls to reduce memory footprint
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.LayoutingQueue">
+            <summary>The Main layouting queue.</summary>
+        </member>
+        <member name="F:Crow.Interface.DiscardQueue">
+            <summary>Store discarded lqi between two updates</summary>
+        </member>
+        <member name="F:Crow.Interface.ClippingQueue">
+            <summary>Main drawing queue, holding layouted controls</summary>
+        </member>
+        <member name="F:Crow.Interface.Instantiators">
+            <summary>each IML and fragments (such as inline Templates) are compiled as a Dynamic Method stored here
+            on the first instance creation of a IML item.
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.ItemTemplates">
+            <summary>
+            Item templates stored with their index
+            </summary>
+        </member>
+        <member name="F:Crow.Interface.clientRectangle">
+            <summary>Client rectangle in the host context</summary>
+        </member>
+        <member name="F:Crow.Interface.clipping">
+            <summary>Clipping rectangles on the root context</summary>
+        </member>
+        <member name="T:Crow.Interface.LoaderInvoker">
+            Default values of properties from Widgets are retrieve from XML Attributes.
+            The reflexion process used to retrieve those values being very slow, it is compiled in MSIL
+            and injected as a dynamic method referenced in the DefaultValuesLoader Dictionnary.
+            The compilation is done on the first object instancing, and is also done for custom widgets
+        </member>
+        <member name="F:Crow.Interface.DefaultValuesLoader">
+            <summary>Store one loader per StyleKey</summary>
+        </member>
+        <member name="F:Crow.Interface.Styling">
+            <summary>Store dictionnary of member/value per StyleKey</summary>
+        </member>
+        <member name="F:Crow.Interface.StylingConstants">
+            <summary>
+            Replacement value for style like cmake or bash variable.
+            </summary>
+            <remarks>
+            each 'key=value' pair in style files not enclosed in brackets are threated as constant.
+            If the same constant is defined more than once, only the first is kept.
+            Than in any IML expresion, in style or xml, constant may be used as a replacement string with ${CONSTANTID}.
+            If a constant is not resolved in iml while creating the instantiator, an error is thrown.
+            </remarks>
+        </member>
+        <member name="M:Crow.Interface.loadStyling">
+            <summary> parse all styling data's during application startup and build global Styling Dictionary </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:Crow.Interface.loadStylingFromAssembly(System.Reflection.Assembly)">
+            <summary> Search for .style resources in assembly </summary>
+        </member>
+        <member name="F:Crow.Interface.sharedPictures">
+            <summary>
+            share a single store for picture resources among usage in different controls
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.LoadIMLFragment(System.String)">
+            <summary>
+            Add the content of the IML fragment to the graphic tree of this interface
+            </summary>
+            <returns>return the new instance for convenience, may be ignored</returns>
+            <param name="imlFragment">a valid IML string</param>
+        </member>
+        <member name="M:Crow.Interface.CreateITorFromIMLFragment(System.String)">
+            <summary>
+            Create an instantiator bound to this interface from the IML fragment
+            </summary>
+            <returns>return the new instantiator</returns>
+            <param name="imlFragment">a valid IML string</param>
+        </member>
+        <member name="M:Crow.Interface.Load(System.String)">
+            <summary>
+            Create an instance of a Widget and add it to the GraphicTree of this Interface
+            </summary>
+            <returns>new instance of graphic object created</returns>
+            <param name="path">path of the iml file to load</param>
+        </member>
+        <member name="M:Crow.Interface.CreateInstance(System.String)">
+            <summary>
+            Create an instance of a Widget linked to this interface but not added to the GraphicTree
+            </summary>
+            <returns>new instance of graphic object created</returns>
+            <param name="path">path of the iml file to load</param>
+        </member>
+        <member name="M:Crow.Interface.GetInstantiator(System.String)">
+            <summary>
+            Fetch instantiator from cache or create it.
+            </summary>
+            <returns>new Instantiator</returns>
+            <param name="path">path of the iml file to load</param>
+        </member>
+        <member name="M:Crow.Interface.GetItemTemplate(System.String)">
+            <summary>Item templates are derived from instantiator, this function
+            try to fetch the requested one in the cache or create it.
+            They have additional properties for recursivity and
+            custom display per item type</summary>
+        </member>
+        <member name="P:Crow.Interface.ActiveWidget">
+            <summary>Widget is focused and button is down or another perif action is occuring
+            , it can not lose focus while Active</summary>
+        </member>
+        <member name="P:Crow.Interface.HoverWidget">
+            <summary>Pointer is over the widget</summary>
+        </member>
+        <member name="P:Crow.Interface.FocusedWidget">
+            <summary>Widget has the keyboard or mouse focus</summary>
+        </member>
+        <member name="M:Crow.Interface.EnqueueForRepaint(Crow.Widget)">
+            <summary>Enqueue Graphic object for Repaint, DrawingQueue is locked because
+            GraphObj's property Set methods could trigger an update from another thread
+            Once in that queue, that means that the layouting of obj and childs have succeed,
+            the next step when dequeued will be clipping registration</summary>
+        </member>
+        <member name="M:Crow.Interface.Update(Crow.Drawing.Context)">
+            <summary>Main Update loop, executed in this interface thread, protected by the UpdateMutex
+            Steps:
+            	- execute device Repeat events
+            	- Layouting
+            	- Clipping
+            	- Drawing
+            Result: the Interface bitmap is drawn in memory (byte[] bmp) and a dirtyRect and bitmap are available
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.processLayouting">
+            <summary>Layouting loop, this is the first step of the udpate and process registered
+            Layouting queue items. Failing LQI's are requeued in this cycle until MaxTry is reached which
+            trigger an enqueue for the next Update Cycle</summary>
+        </member>
+        <member name="M:Crow.Interface.clippingRegistration">
+            <summary>Degueue Widget to clip from DrawingQueue and register the last painted slot and the new one
+            Clipping rectangles are added at each level of the tree from leef to root, that's the way for the painting
+            operation to known if it should go down in the tree for further graphic updates and repaints</summary>
+        </member>
+        <member name="M:Crow.Interface.processDrawing(Crow.Drawing.Context)">
+            <summary>Clipping Rectangles drive the drawing process. For compositing, each object under a clip rectangle should be
+            repainted. If it contains also clip rectangles, its cache will be update, or if not cached a full redraw will take place</summary>
+        </member>
+        <member name="F:Crow.Interface.TEXT_CURSOR_BLINK_FREQUENCY">
+            <summary>
+            Text cursor blinking frequency.
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.AddWidget(Crow.Widget)">
+            <summary>Add widget to the Graphic tree of this interface and register it for layouting</summary>
+        </member>
+        <member name="M:Crow.Interface.DeleteWidget(Crow.Widget)">
+            <summary>Set visible state of widget to false and delete if from the graphic tree</summary>
+        </member>
+        <member name="M:Crow.Interface.RemoveWidget(Crow.Widget)">
+            <summary>Set visible state of widget to false and remove if from the graphic tree</summary>
+        </member>
+        <member name="M:Crow.Interface.ClearInterface">
+            <summary> Remove all Graphic objects from top container </summary>
+        </member>
+        <member name="M:Crow.Interface.PutOnTop(Crow.Widget,System.Boolean)">
+            <summary> Put widget on top of other root widgets</summary>
+        </member>
+        <member name="M:Crow.Interface.FindByName(System.String)">
+            <summary>Search a Graphic object in the tree named 'nameToFind'</summary>
+        </member>
+        <member name="M:Crow.Interface.ProcessResize(Crow.Rectangle)">
+            <summary>
+            Resize the interface. This function should be called by the host
+            when window resize event occurs.
+            </summary>
+            <param name="bounds">bounding box of the interface</param>
+        </member>
+        <member name="M:Crow.Interface.ForceMousePosition">
+            <summary>
+            Ask OS to force the mouse position to the actual coordinate of Interface.MousePosition
+            </summary>
+        </member>
+        <member name="M:Crow.Interface.OnMouseMove(System.Int32,System.Int32)">
+            <summary>Processes mouse move events from the root container, this function
+            should be called by the host on mouse move event to forward events to crow interfaces</summary>
+            <returns>true if mouse is in the interface</returns>
+        </member>
+        <member name="M:Crow.Interface.OnMouseButtonDown(Glfw.MouseButton)">
+            <summary>
+            Forward the mouse down event from the host to the hover widget in the crow interface
+            </summary>
+            <returns>return true, if interface handled the event, false otherwise.</returns>
+            <param name="button">Button index</param>
+        </member>
+        <member name="M:Crow.Interface.OnMouseButtonUp(Glfw.MouseButton)">
+            <summary>
+            Forward the mouse up event from the host to the crow interface
+            </summary>
+            <returns>return true, if interface handled the event, false otherwise.</returns>
+            <param name="button">Button index</param>
+        </member>
+        <member name="M:Crow.Interface.OnMouseWheelChanged(System.Single)">
+            <summary>
+            Forward the mouse wheel event from the host to the crow interface
+            </summary>
+            <returns>return true, if interface handled the event, false otherwise.</returns>
+            <param name="delta">wheel delta</param>
+        </member>
+        <member name="T:Crow.BooleanTestOnInstance">
+            <summary> Test func on data, return yes if there's children </summary>
+        </member>
+        <member name="T:Crow.ItemTemplate">
+             <summary>
+             Derived from Instantiator with sub data fetching facilities for hierarchical data access.
+            
+             ItemTemplate stores the dynamic method for instantiating the control tree defined in a valid IML file.
+            
+             </summary>
+        </member>
+        <member name="M:Crow.ItemTemplate.#ctor(Crow.Interface,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.ItemTemplate"/> class by parsing the file passed as argument.
+            </summary>
+            <param name="path">IML file to parse</param>
+            <param name="_dataType">type this item will be choosen for, or member of the data item</param>
+            <param name="_fetchDataMethod">for hierarchical data, method to call for children fetching</param>
+        </member>
+        <member name="M:Crow.ItemTemplate.#ctor(Crow.Interface,System.IO.Stream,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.ItemTemplate"/> class by parsing the IML fragment passed as arg.
+            </summary>
+            <param name="ImlFragment">IML fragment to parse</param>
+            <param name="_dataType">type this item will be choosen for, or member of the data item</param>
+            <param name="_fetchDataMethod">for hierarchical data, method to call for children fetching</param>
+        </member>
+        <member name="M:Crow.ItemTemplate.#ctor(Crow.Interface,System.Xml.XmlReader,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.ItemTemplate"/> class using the opened XmlReader in args.
+            </summary>
+            <param name="reader">XML reader positionned before or at the root node</param>
+            <param name="_dataType">type this item will be choosen for, or member of the data item</param>
+            <param name="_fetchDataMethod">for hierarchical data, method to call for children fetching</param>
+        </member>
+        <member name="M:Crow.ItemTemplate.CreateExpandDelegate(Crow.TemplatedGroup)">
+            <summary>
+            Creates the expand delegate.
+            </summary>
+            <param name="host">Host.</param>
+        </member>
+        <member name="T:Crow.IValueChange">
+            <summary>
+            implement `IValueChange` interface in object you want to bind to the interface.
+            For each property updated in code, raise a value change in the container class
+            to inform Crow binding system that the value has changed.
+            </summary>
+        </member>
+        <member name="T:Crow.ValueContainer`1">
+            <summary>
+            Container for net primitive value type implementing IValueChange
+            </summary>
+        </member>
+        <member name="T:Crow.LayoutingQueueItem">
+            <summary>
+            Element class of the LayoutingQueue
+            </summary>
+        </member>
+        <member name="F:Crow.LayoutingQueueItem.Layoutable">
+            <summary> Instance of widget to be layouted</summary>
+        </member>
+        <member name="F:Crow.LayoutingQueueItem.LayoutType">
+            <summary> Bitfield containing the element of the layout to performs (x|y|width|height)</summary>
+        </member>
+        <member name="F:Crow.LayoutingQueueItem.LayoutingTries">
+            <summary> Unsuccessfull UpdateLayout and requeueing count </summary>
+        </member>
+        <member name="F:Crow.LayoutingQueueItem.DiscardCount">
+            <summary> Unsuccessfull UpdateLayout and requeueing count </summary>
+        </member>
+        <member name="M:Crow.StbImage.#ctor(System.String,System.Int32)">
+            <summary>
+            Open image file with STBI library
+            </summary>
+            <param name="path">file path</param>
+            <param name="requestedChannels">Force returned channels count, set 0 for original count</param>
+        </member>
+        <member name="M:Crow.StbImage.#ctor(System.IntPtr,System.UInt64,System.Int32)">
+            <summary>
+            Open image in memory with STBI library
+            </summary>
+            <param name="bitmap">raw bitmap datas</param>
+            <param name="bitmapByteCount">Bitmap byte count.</param>
+            <param name="requestedChannels">Force returned channels count, set 0 for original count</param>
+        </member>
+        <member name="T:Crow.StyleReader">
+            <summary>
+            Parser for style files. Only the first occurence of a key/value pair is kept.
+            Theme styles will override any style, then the startup application styles have priority.
+            </summary>
+            <remark>
+            The order of style loading during application startup is as follow:
+              - Optional theme styles
+              - Style from entry assembly, the executable
+              - crowAssemblies list are loaded in order.
+              - default style from the crow assembly.
+            </remark>
+        </member>
+        <member name="M:Crow.StyleReader.Parse(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,Crow.Style},System.String)">
+            <summary>
+            Parse the full style stream and load the result in 'Styling' and 'StylingConstant'
+            fields of the interface passed as argument.
+            </summary>
+        </member>
+        <member name="F:Crow.Text.CharLocation.Column">
+             <summary>
+             Character position in current line. If equals '-1', the visualX must contains the on screen position.
+            
+             </summary>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.TryRead(System.ReadOnlySpan{System.Char},System.StringComparison)">
+            <summary>
+            Try read expected string and advance reader position in any case
+            </summary>
+            <param name="expectedString">expected string</param>
+            <param name="comparison">comparison type</param>
+            <returns>true if expected string is found</returns>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.Get(System.Int32)">
+            <summary>
+            Retrieve a span of that buffer from provided starting position to the current reader position.
+            </summary>
+            <param name="fromPosition"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Crow.Text.SpanCharReader.EndOfSpan">
+            <summary>
+            Current reader position is further the end of the buffer.
+            </summary>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.TryPeak(System.Char@)">
+            <summary>
+            Try peak one char, return false if end of span, true otherwise.
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.IsNextCharIn(System.Char[])">
+            <summary>
+            test if next char is one of the provided one as parameter
+            </summary>
+            <param name="chars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.AdvanceUntilEol">
+            <summary>
+            increment reader position just before the next end of line
+            </summary>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.Eol">
+            <summary>
+            Next char or pair of chars is end of line.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Text.SpanCharReader.ReadEol">
+            <summary>
+            next char sequence has already been tested as eol, advance 1 or two char depending on eol format.
+            </summary>
+        </member>
+        <member name="T:Crow.Text.TextLine">
+            <summary>
+            represent a single line span with end of line handling.
+            </summary>
+        </member>
+        <member name="F:Crow.Text.TextLine.Start">
+            <summary>
+            Line start absolute character position.
+            </summary>
+        </member>
+        <member name="F:Crow.Text.TextLine.Length">
+            <summary>
+            Line's character count not including linebreak if any.
+            </summary>
+        </member>
+        <member name="F:Crow.Text.TextLine.LengthIncludingLineBreak">
+            <summary>
+            Total line's Character count including linebreak characters if any.
+            </summary>
+        </member>
+        <member name="F:Crow.Text.TextLine.LengthInPixel">
+            <summary>
+            Cached line's length in pixel. If not yet computed by renderer, value is '-1'
+            </summary>
+        </member>
+        <member name="P:Crow.Text.TextLine.End">
+            <summary>
+            Absolute end character position just before linebreak if any.
+            </summary>
+        </member>
+        <member name="P:Crow.Text.TextLine.EndIncludingLineBreak">
+            <summary>
+            Absolute line's end position after linebreak if any.
+            </summary>
+        </member>
+        <member name="P:Crow.Text.TextLine.LineBreakLength">
+            <summary>
+            Character count of the linebreak, 0 if no linebreak.
+            </summary>
+        </member>
+        <member name="P:Crow.Text.TextLine.HasLineBreak">
+            <summary>
+            True line has a linebreak, false otherwise.
+            </summary>
+        </member>
+        <member name="M:Crow.Text.TextLine.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a new TextLine span using the absolute start and end character positions.
+            </summary>
+        </member>
+        <member name="M:Crow.Text.TextLine.#ctor(System.Int32)">
+            <summary>
+            Create an empty line span without linebreak starting at absolute charater position given in argument.
+            </summary>
+            <param name="start"></param>
+        </member>
+        <member name="M:Crow.Text.TextLine.SetLength(System.Int32)">
+            <summary>
+            Set a new line's length and reset computed length in pixel to '-1'.
+            </summary>
+            <param name="newLength"></param>
+        </member>
+        <member name="M:Crow.Text.TextLine.WithStartOffset(System.Int32)">
+            <summary>
+            Create a new TextLine span with a start offset, length in pixel is reseted.
+            </summary>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Crow.IEditableTextWidget">
+            <summary>
+            Implement this interface to have a blinking cursor for a widget
+            with editable text ability.
+            </summary>
+        </member>
+        <member name="M:Crow.IEditableTextWidget.DrawCursor(Crow.Drawing.Context,Crow.Rectangle@)">
+            <summary>
+            Draw text cursor in widget with screen coordinates. This interface when implemented is called
+            automatically by the Interface to make the cursor blink. The blinking frequency is controlled by
+            Interface.TEXT_CURSOR_BLINK_FREQUENCY static field.
+            </summary>
+            <param name="ctx">The master interface context on which to draw the cursor</param>
+            <param name="rect">Return a clipping rectangle containing the cursor position to be cleared when needed</param>
+            <returns>True if cursor were drawed, false otherwise</returns>
+        </member>
+        <member name="T:Crow.BorderStyle">
+            <summary>
+            provide an easy way to get 3d border for buttons
+            </summary>
+        </member>
+        <member name="T:Crow.Border">
+            <summary>
+            simple container with border
+            </summary>
+        </member>
+        <member name="P:Crow.Border.RaisedColor">
+            <summary>
+            use to define the colors of the 3d border
+            </summary>		
+        </member>
+        <member name="P:Crow.Border.SunkenColor">
+            <summary>
+            use to define the colors of the 3d border
+            </summary>		
+        </member>
+        <member name="P:Crow.Border.BorderWidth">
+            <summary>
+            border width in pixels
+            </summary>
+        </member>
+        <member name="P:Crow.Border.BorderStyle">
+            <summary>
+            allow 3d border effects
+            </summary>
+        </member>
+        <member name="T:Crow.Button">
+            <summary>
+            templated button control
+            </summary>
+        </member>
+        <member name="T:Crow.CheckBox">
+            <summary>
+            templated checkbox control
+            </summary>
+        </member>
+        <member name="P:Crow.CircleMeter.StartAngle">
+            <summary>
+            Starting andle in degree corresponding to the minimum value
+            </summary>
+        </member>
+        <member name="P:Crow.CircleMeter.EndAngle">
+            <summary>
+            Ending angle in degree corresponding to the maximum value
+            </summary>
+        </member>
+        <member name="P:Crow.CircleMeter.LineWidth">
+            <summary>
+            Line width used to draw the value.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.CircleMeter.BackgroundLineWidth">
+            <summary>
+            Line width used to draw the background arc from start to end angle
+            </summary>		
+        </member>
+        <member name="T:Crow.ColorPicker">
+            <summary>
+            templated color selector control
+            </summary>
+        </member>
+        <member name="T:Crow.ColorSelector">
+            <summary>
+            simple squarred rgb color selector
+            </summary>
+        </member>
+        <member name="T:Crow.ColorSlider">
+            <summary>
+            Color component slider with background gradient ranging from 0 to 1 for this component value.
+            </summary>
+        </member>
+        <member name="T:Crow.ComboBox">
+            <summary>
+            templated control for selecting value in a pop up list
+            </summary>
+        </member>
+        <member name="T:Crow.Container">
+            <summary>
+            simple container accepting one child
+            </summary>
+        </member>
+        <member name="M:Crow.Container.SetChild(Crow.Widget)">
+            <summary>
+            override this to handle specific steps in child addition in derived class,
+            and don't forget to call the base.SetChild
+            </summary>
+        </member>
+        <member name="T:Crow.DataSourceChangeEventArgs">
+            <summary>
+            Raised when the current data source of a widget has changed.
+            </summary>
+        </member>
+        <member name="T:Crow.DirectoryView">
+            <summary>
+            templated directory viewer
+            </summary>
+        </member>
+        <member name="T:Crow.DirectoryView2">
+            <summary>
+            templated directory viewer
+            </summary>
+        </member>
+        <member name="M:Crow.DirectoryView2.loadTemplate(Crow.Widget)">
+            <summary>
+            Default template in DirectoryView is set depending on 'ViewStyle'
+            </summary>
+            <param name="template"></param>
+        </member>
+        <member name="M:Crow.DockStack.ImportConfig(System.ReadOnlySpan{System.Char},System.Object)">
+            <summary>
+            Imports the config.
+            </summary>
+            <param name="conf">Conf.</param>
+            <param name="dataSource">Data source for the docked windows</param>
+        </member>
+        <member name="P:Crow.DockWindow.FreezeDockState">
+            <summary>
+            if true, current dock status (docked or undocked) is frozen, and trying to move the
+            window will not trigger docking try.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.DockWindow.FloatingGroup">
+            <summary>
+            If null, the default container for the floating windows is the Interface. If a valid
+            group is set, undocked windows will be contained in this widget, allowing multiple independant levels
+            of dockable windows
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Crow.EnumSelector">
+            <summary>
+            Convenient widget for selecting value among enum values. This is a templated control
+            expecting a 'Group' widget named 'Content' inside the template to handle the enum values display.
+            </summary>
+            <remarks>
+            Instanced RadioButton's names are set to enum values, and Tags are populated with a string build with
+            'IconsPrefix+EnumValueName+IconsExtension to ease associating icons with values.
+            There's many other way to use this control, for examples see 'testEnumSelector.crow' in  the samples directory.
+            </remarks>
+        </member>
+        <member name="P:Crow.EnumSelector.RadioButtonStyle">
+            <summary>
+            Enum values are presented with RadioButton or CheckBox controls. Here you may specify a template to use
+            for the radio buttons.
+            </summary>
+        </member>
+        <member name="P:Crow.EnumSelector.ItemStyle">
+            <summary>
+            Enum values are presented with RadioButton or CheckBox controls. Here you may specify a template to use
+            for the radio buttons.
+            </summary>
+        </member>
+        <member name="P:Crow.EnumSelector.ForceRadioButton">
+            <summary>
+            if enum has the 'Flag' attribte, CheckBox will be used. RadioButton may still be forced by
+            setting 'ForceRadioButton'='true'
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.EnumSelector.EnumValue">
+            <summary>
+            Current Selected Value(s).
+            </summary>
+        </member>
+        <member name="P:Crow.EnumSelector.BitFieldExcludeMask">
+            <summary>
+            Include mask for bitfields. Used to ignore enum values in display.
+            </summary>
+            <value>UInt32 bitfield mask</value>
+        </member>
+        <member name="T:Crow.Expandable">
+            <summary>
+            templated control whose content can be hidden and shown on demand
+            </summary>
+        </member>
+        <member name="E:Crow.Expandable.Expand">
+            <summary>
+            Occurs when control is expanded.
+            </summary>
+        </member>
+        <member name="E:Crow.Expandable.Collapse">
+            <summary>
+            Occurs when control is collapsed.
+            </summary>
+        </member>
+        <member name="M:Crow.Expandable.onClickForExpand(System.Object,Crow.MouseButtonEventArgs)">
+            <summary>
+            mouse click event handler for easy expand triggering in IML
+            </summary>
+        </member>
+        <member name="T:Crow.FileDialog">
+            <summary>
+            templated control for selecting files
+            </summary>
+        </member>
+        <member name="P:Crow.Gauge.Inverted">
+            <summary>
+            if true, horizontal gauge will align drawing right, and vertical on bottom.
+            </summary>
+        </member>
+        <member name="T:Crow.GenericStack">
+            <summary>
+            group container that stacked its children horizontally or vertically
+            </summary>
+        </member>
+        <member name="T:Crow.Grid">
+            <summary>
+            Simple grid container
+            Allow symetric placement of children on a grid,
+            excedental child (above grid sizing) are ignored
+            and invisible child keep their place in the grid
+            </summary>
+        </member>
+        <member name="T:Crow.GroupBox">
+            <summary>
+            templated container accepting one child
+            </summary>
+        </member>
+        <member name="T:Crow.HorizontalStack">
+            <summary>
+            group control stacking its children horizontally
+            </summary>
+        </member>
+        <member name="P:Crow.ILayoutable.Parent">
+            <summary> Parent in the graphic tree </summary>
+        </member>
+        <member name="P:Crow.ILayoutable.LogicalParent">
+            <summary> The logical parent (used mainly for bindings) as opposed
+             to the parent in the graphic tree </summary>
+        </member>
+        <member name="T:Crow.Image">
+            <summary>
+            Base widget to display an image. Accepts bitmaps and SVGs.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Crow.Image.Scaled">
+            <summary>
+            If false, original size will be kept in any case.
+            </summary>
+        </member>
+        <member name="P:Crow.Image.KeepProportions">
+            <summary>
+            If image is scaled, proportions will be preserved.
+            </summary>
+        </member>
+        <member name="P:Crow.Image.Path">
+            <summary>
+            Image file path, may be on disk or embedded. Accepts bitmaps or SVG drawings.
+            </summary>        
+        </member>
+        <member name="P:Crow.Image.SvgSub">
+            <summary>
+            Used only for svg images, repaint only node named referenced in SvgSub.
+            If null, all the svg is rendered
+            </summary>		
+        </member>
+        <member name="P:Crow.Image.Picture">
+            <summary>
+            Object holding the image data once loaded, may be used directely to pupulate this control without 
+            specifying a path.
+            </summary>		
+        </member>
+        <member name="P:Crow.Image.Opacity">
+            <summary>
+            Opacity parameter for the image
+            </summary>
+        </member>
+        <member name="M:Crow.Image.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.Image"/> class.
+            </summary>
+        </member>
+        <member name="M:Crow.Image.#ctor(Crow.Interface)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crow.Image"/> class from code
+            </summary>
+            <param name="iface">interface to bound to</param>
+        </member>
+        <member name="T:Crow.Label">
+            <summary>
+            Simple label widget possibly multiline but without tabulation handling.
+            </summary>
+        </member>
+        <member name="E:Crow.Label.TextChanged">
+            <summary>
+            Occurs when Text has changed.
+            </summary>
+        </member>
+        <member name="E:Crow.Label.SelectionChanged">
+            <summary>
+            Occurs when the current selected text has changed
+            </summary>
+        </member>
+        <member name="M:Crow.Label.SetCursorPosition(System.Int32)">
+            <summary>
+            Set current cursor position in label.
+            </summary>
+            <param name="position">Absolute character position in text.</param>
+        </member>
+        <member name="P:Crow.Label.SelectionBackground">
+            <summary>
+            Background color for selected text inside this label.
+            </summary>
+        </member>
+        <member name="P:Crow.Label.SelectionForeground">
+            <summary>
+            Selected text color inside this label.
+            </summary>
+        </member>
+        <member name="P:Crow.Label.TextAlignment">
+            <summary>
+            If measure is not 'Fit', align text inside the bounds of this label.
+            </summary>
+        </member>
+        <member name="P:Crow.Label.Text">
+            <summary>
+            Text to display in this label. May include linebreaks if Multiline is 'true'.
+            If Multiline is false, linebreaks will be treated as unrecognized unicode char.
+            </summary>
+        </member>
+        <member name="P:Crow.Label.Multiline">
+            <summary>
+            If 'true', linebreaks will be interpreted. If 'false', linebreaks are threated as unprintable
+            unicode characters. Default value is 'False'.
+            </summary>
+        </member>
+        <member name="M:Crow.Label.MoveLeft">
+            <summary>
+            Moves cursor one char to the left.
+            </summary>
+            <returns><c>true</c> if move succeed</returns>
+        </member>
+        <member name="P:Crow.Label.Selection">
+            <summary>
+            Current Selected text span. May be used to set current position, or current selection.
+            </summary>
+        </member>
+        <member name="T:Crow.ListItem">
+            <summary>
+            Top container to use as ItemTemplate's root for TemplatedGroups (lists, treeviews, ...) that add selection
+            status and events
+            </summary>
+        </member>
+        <member name="T:Crow.PrivateContainer">
+            <summary>
+            Implement drawing and layouting for a single child, but
+            does not expose child to allow reuse of container
+            behaviour for widgets that have other xml hierarchy: example
+            TemplatedControl may have 3 children (template,templateItem,content) but
+            behave exactely as a container for layouting and drawing
+            </summary>
+        </member>
+        <member name="T:Crow.ProgressBar">
+            <summary>
+            Templated numeric control for displaying a progress indicator
+            </summary>
+        </member>
+        <member name="T:Crow.RadioButton">
+            <summary>
+            Bistate templated control. Several occurences in one Group constrol will allow
+            only one checked RadioButton, other are automatically disabled.
+            </summary>
+        </member>
+        <member name="T:Crow.Scalable">
+            <summary>
+            Base class for controling scalable content behaviour.
+            </summary>
+        </member>
+        <member name="P:Crow.Scalable.Scaled">
+            <summary>
+            If true, content will be scalled to fit widget client area.
+            </summary>
+        </member>
+        <member name="P:Crow.Scalable.KeepProportions">
+            <summary>
+            If image is scaled, proportions will be preserved.
+            </summary>
+        </member>
+        <member name="T:Crow.ScrollBar">
+            <summary>
+            templeted numeric control
+            </summary>
+        </member>
+        <member name="P:Crow.ScrollBar.CursorRatio">
+            <summary>
+            Ratio of CusorSize / CursorContainerSize, -1 if not in use.
+            </summary>
+        </member>
+        <member name="T:Crow.Scroller">
+            <summary>
+            scrolling surface, to be contained in a smaller container in which it will be scrolled
+            </summary>
+        </member>
+        <member name="F:Crow.Scroller.keyEventsOverrides">
+            <summary>
+            if true, key stroke are handled in derrived class
+            </summary>
+        </member>
+        <member name="P:Crow.Scroller.ScrollX">
+            <summary> Horizontal Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.Scroller.ScrollY">
+            <summary> Vertical Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.Scroller.MaxScrollX">
+            <summary> Horizontal Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.Scroller.MaxScrollY">
+            <summary> Vertical Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.Scroller.ScrollSpeed">
+            <summary> Mouse Wheel Scrolling multiplier </summary>
+        </member>
+        <member name="M:Crow.Scroller.onMouseWheel(System.Object,Crow.MouseWheelEventArgs)">
+            <summary> Process scrolling vertically, or if shift is down, vertically </summary>
+        </member>
+        <member name="M:Crow.Scroller.onKeyDown(System.Object,Crow.KeyEventArgs)">
+            <summary> Process scrolling with arrow keys, home and end keys. </summary>
+        </member>
+        <member name="T:Crow.ScrollingObject">
+            <summary>
+            generic class to build scrolling control in both directions
+            </summary>
+        </member>
+        <member name="F:Crow.ScrollingObject.KeyEventsOverrides">
+            <summary>
+            if true, key stroke are handled in derrived class
+            </summary>
+        </member>
+        <member name="P:Crow.ScrollingObject.ScrollX">
+            <summary> Horizontal Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.ScrollingObject.ScrollY">
+            <summary> Vertical Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.ScrollingObject.MaxScrollX">
+            <summary> Horizontal Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.ScrollingObject.MaxScrollY">
+            <summary> Vertical Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.ScrollingObject.MouseWheelSpeed">
+            <summary> Mouse Wheel Scrolling multiplier </summary>
+        </member>
+        <member name="M:Crow.ScrollingObject.onMouseWheel(System.Object,Crow.MouseWheelEventArgs)">
+            <summary> Process scrolling vertically, or if shift is down, vertically </summary>
+        </member>
+        <member name="M:Crow.ScrollingObject.onKeyDown(System.Object,Crow.KeyEventArgs)">
+            <summary> Process scrolling with arrow keys, home and end keys. </summary>
+        </member>
+        <member name="M:Crow.ScrollingStack.onMouseWheel(System.Object,Crow.MouseWheelEventArgs)">
+            <summary> Process scrolling vertically, or if shift is down, vertically </summary>
+        </member>
+        <member name="T:Crow.PathParser">
+            <summary>
+            String Parser for drawing shape
+            </summary>
+            <remarks>
+            All fields are separated by one or more space. Each statement is composed of one letter followed by 0 to n
+            double parameters. The following list enumerate available instructions:
+            - M x y: Move to (x,y) absolute coordinate.
+            - m x y: Relative move to by x in the horizontal direction and y in the vertical.
+            - L x y: Line to (x,y)
+            - l x y: trace line from current point by moving pen by x and y in each direction.
+            - R x y w h: draw rectangle at (x,y) with width and height equal to w and h.
+            - C x1 y1 x2 y2 x3 y3: draw bezier curve with current point as first control point, and parameters as others.
+            - c x1 y1 x2 y2 x3 y3: draw bezier curve with control points relative to current position.
+            - A x y r a1 a2: draw positive arc at (x,y) with radius r from angle a1 to angle a2.
+            - N x y r a1 a2: draw negative arc at (x,y) with radius r from angle a1 to angle a2.
+            - Z: close path
+            - F: fill path.
+            - f: fill preserve.
+            - G: stroke path.
+            - g: stroke preserve.
+            - S x: set line width to x.
+            - O r g b a: set solid color as source with rgba values.
+            </remarks>
+        </member>
+        <member name="T:Crow.Shape">
+            <summary>
+            Widget for drawing a shape define with a path expression as defined in the PathParser.
+            </summary>
+        </member>
+        <member name="P:Crow.Shape.Path">
+            <summary>
+            Path expression, for syntax see 'PathParser'.
+            </summary>
+        </member>
+        <member name="P:Crow.Shape.StrokeWidth">
+            <summary>
+            Default stroke width, may be overriden by a 'S' command in the path string.
+            </summary>
+            <value>The width of the stoke.</value>
+        </member>
+        <member name="P:Crow.Shape.Size">
+            <summary>
+            View box 
+            </summary>
+        </member>
+        <member name="T:Crow.Slider">
+            <summary>
+            templated numeric control to select a value by slidding a cursor.
+            </summary>
+        </member>
+        <member name="P:Crow.Slider.Inverted">
+            <summary>
+            if true, horizontal gauge will align drawing right, and vertical on bottom.
+            </summary>
+        </member>
+        <member name="T:Crow.Spinner">
+            <summary>
+            templated control for selecting a numeric value by clicking on
+            up and down buttons
+            </summary>
+        </member>
+        <member name="T:Crow.Splitter">
+            <summary>
+            control to add between children of a Stack to allow them to be resized
+            with the pointer
+            </summary>
+        </member>
+        <member name="T:Crow.Column">
+            <summary>
+            Table column definition
+            </summary>
+        </member>
+        <member name="P:Crow.Column.Width">
+            <summary>
+            column width, special value 'Inherit' will be used to share table width equaly among columns
+            </summary>
+            <value>The column's width.</value>
+        </member>
+        <member name="T:Crow.TemplatedContainer">
+            <summary>
+            base class for new containers that will use templates.
+            
+            TemplatedControl's **must** provide a widget of the [`Container`](Container) class named **_'Content'_** inside their template tree
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedContainer.Content">
+            <summary>
+            Single child of this templated container.
+            </summary>
+        </member>
+        <member name="T:Crow.TemplatedControl">
+            <summary>
+            Base class for all templated widget
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedControl.Template">
+            <summary>
+            Template path or IML fragment.
+            </summary>
+            <remark>
+            The 'null' default value with the 'NOT_SET' field init value  force a loading
+            of the default template by passing the first equality check.
+            </remark>
+        </member>
+        <member name="P:Crow.TemplatedControl.Caption">
+            <summary>
+            a caption being recurrent need in templated widget, it is declared here.
+            </summary>
+        </member>
+        <member name="M:Crow.TemplatedControl.FindByName(System.String)">
+            <summary>
+            override search method from Widget to prevent
+            searching inside template
+            </summary>
+            <returns>widget identified by name, or null if not found</returns>
+            <param name="nameToFind">widget's name to find</param>
+        </member>
+        <member name="M:Crow.TemplatedControl.onDraw(Crow.Drawing.Context)">
+             <summary>
+            onDraw is overriden to prevent default drawing of background, template top container
+            may have a binding to root background or a fixed one.
+            this allow applying root background to random template's component
+             </summary>
+             <param name="gr">Backend context</param>
+        </member>
+        <member name="M:Crow.TemplatedControl.loadTemplate(Crow.Widget)">
+            <summary>
+            Loads the template. Each TemplatedControl MUST provide a default template
+            or have an inlined template in iml.
+            It must be an embedded ressource with ID = fullTypeName.template
+            Entry assembly is search first, then the one where the type is defined
+            </summary>
+            <Remark>
+            Setting the default template path in style will provide an interned string for itor search.
+            </Remark>
+            <param name="template">Optional template instance</param>
+        </member>
+        <member name="E:Crow.TemplatedGroup.SelectedItemContainerChanged">
+            <summary>
+            raised when root widget of item template is a 'ListItem' and this item is selected.
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedGroup.UseLoadingThread">
+            <summary>
+            Use anothred thread for loading items, default value is true.
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedGroup.HasItemTemplates">
+            <summary>
+            True if this templated group contains at least one item template.
+            </summary>
+        </member>
+        <member name="F:Crow.TemplatedGroup.nodes">
+            <summary>
+            Keep track of expanded subnodes and closed time to unload
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedGroup.ItemTemplate">
+             <summary>
+             Item templates file path, on disk or embedded.
+            
+             ItemTemplate file may contains either a single template without the
+             ItemTemplate enclosing tag, or several item templates each enclosed
+             in a separate tag.
+             </summary>
+        </member>
+        <member name="M:Crow.TemplatedGroup.loadItemTemplateFromPropertyValue">
+            <summary>
+            load ItemTemplate(s) from ItemTemplate property
+            </summary>
+        </member>
+        <member name="P:Crow.TemplatedGroup.DataTest">
+            <summary>
+            Use to define condition on Data item for selecting among ItemTemplates.
+            Default value is 'TypeOf' for selecting Template depending on Type of Data.
+            Other possible values are properties of Data
+            </summary>
+            <value>The data property test.</value>
+        </member>
+        <member name="M:Crow.TemplatedGroup.loading">
+            <summary>
+            Items loading thread
+            </summary>
+        </member>
+        <member name="E:Crow.TextBox.Validate">
+            <summary>
+            Validate content of the text box. Occurs in non multiline TextBox when 'Enter' key
+            is pressed.
+            </summary>
+        </member>
+        <member name="F:Crow.TextBox.KeyEventsOverrides">
+            <summary>
+            if true, key stroke are handled in derrived class
+            </summary>
+        </member>
+        <member name="P:Crow.TextBox.ScrollX">
+            <summary> Horizontal Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.TextBox.ScrollY">
+            <summary> Vertical Scrolling Position </summary>
+        </member>
+        <member name="P:Crow.TextBox.MaxScrollX">
+            <summary> Horizontal Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.TextBox.MaxScrollY">
+            <summary> Vertical Scrolling maximum value </summary>
+        </member>
+        <member name="P:Crow.TextBox.MouseWheelSpeed">
+            <summary> Mouse Wheel Scrolling multiplier </summary>
+        </member>
+        <member name="M:Crow.TextBox.onMouseWheel(System.Object,Crow.MouseWheelEventArgs)">
+            <summary> Process scrolling vertically, or if shift is down, vertically </summary>
+        </member>
+        <member name="T:Crow.TreeView">
+            <summary>
+            Treeview expect expandable child (or not)
+            if their are expandable, some functions and events are added
+            </summary>
+        </member>
+        <member name="T:Crow.VerticalStack">
+            <summary>
+            group control stacking its children vertically
+            </summary>
+        </member>
+        <member name="T:Crow.Widget">
+            <summary>
+            The base class for all the ui components.
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.IFace">
+            <summary>
+            The interface this widget is bound to when instantiated, 
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.Clipping">
+            <summary>
+            contains the dirty rectangles in the coordinate system of the cache. those dirty zones
+            are repeated at each cached levels of the tree with correspondig coordinate system. This is done
+            in a dedicated step of the update between layouting and drawing.
+            </summary>
+        </member>
+        <member name="E:Crow.Widget.ValueChanged">
+            <summary>
+            Raise to notify that the value of a property has changed, the binding system
+            rely mainly on this event. the member name may not be present in the class, this is
+            used in **propertyless** bindings, this allow to raise custom named events without needing
+            to create an new one in the class or a new property.
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.NotifyValueChanged(System.String,System.Object)">
+            <summary>
+            Helper function to raise the value changed event
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.#ctor">
+            <summary>
+            default private parameter less constructor use in instantiators, it should not be used
+            when creating widget from code because widgets has to be bound to an interface before any other
+            action.
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.#ctor(Crow.Interface,System.String)">
+             <summary>
+             This constructor **must** be used when creating widget from code.
+            
+             When creating new widgets, both parameterless and this constructors are
+             facultatives, the compiler will create the parameterless one automaticaly if no other one exists.
+             But if you intend to be able to create instances of the new widget in code and override the constructor
+             with the Interface parameter, you **must** also provide the override of the parameterless constructor because
+             compiler will not create it automatically because of the presence of the other one.
+             </summary>
+             <param name="iface">Iface.</param>
+        </member>
+        <member name="M:Crow.Widget.Initialize">
+            <summary>
+            Initialize this Graphic object instance by setting style and default values and loading template if required.
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.Slot">
+            <summary>
+            Current size and position computed during layouting pass
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.LastSlots">
+            <summary>
+            keep last slot components for each layouting pass to track
+            changes and trigger update of other component accordingly
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.LastPaintedSlot">
+            <summary>
+            keep last slot painted on screen to clear traces if moved or resized
+            version to clear effective oldslot if parents have been moved or resized.
+            IDEA is to add a ScreenCoordinates function that use only lastPaintedSlots
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.IsQueueForClipping">
+            <summary>Prevent requeuing multiple times the same widget</summary>
+        </member>
+        <member name="F:Crow.Widget.bmp">
+            <summary>drawing Cache, if null, a redraw is done on repaint, cached or not</summary>
+        </member>
+        <member name="F:Crow.Widget.IsDirty">
+            <summary>
+            If the widget dirty state is set to true, a full redraw will be triggered on paint.
+            </summary>
+        </member>
+        <member name="F:Crow.Widget.contentSize">
+            <summary>
+            This size is computed on each child' layout changes.
+            In stacking widget, it is used to compute the remaining space for the stretched
+            widget inside the stack, which is never added to the contentSize, instead, its size
+            is deducted from (parent.ClientRectangle - contentSize)
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.RegisteredLayoutings">
+            <summary>
+            Curently queued layouting passes.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.Widget.RequiredLayoutings">
+            <summary>
+            Required layouting passes before this widget may be renderend.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.Widget.Parent">
+            <summary>
+            Parent in the graphic tree, used for rendering and layouting
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.FocusParent">
+            <summary>
+            Mouse routing need to go back to logical parent for popups
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.LogicalParent">
+            <summary>
+            Logical parenting is used to override the default Graphic tree hierarchy for datasource resolution.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Crow.Widget.ClientRectangle">
+            <summary>
+            Local coordinates of the client rectangle. The x and y are equal to the margin.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Crow.Widget.ContextCoordinates(Crow.Rectangle)">
+            <summary>
+            Compute rectangle position on surface of the context. It ma be the first cached surface in parenting chain,
+            or the top backend surface if no cached widget is part of the current widget tree.
+            </summary>
+            <returns>A new rectangle with same dimension as the input one with x and y relative to the context surface</returns>
+            <param name="r">A rectangle to compute the coordinate for.</param>
+        </member>
+        <member name="M:Crow.Widget.RelativeSlot(Crow.Widget)">
+            <summary>
+            Compute coordintates relative to another widget.
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Widget.ScreenCoordinates(Crow.Rectangle)">
+            <summary>
+            Widget coordintate relative to the main drawing surface, normally a GLFW window.
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crow.Widget.ScreenPointToLocal(Crow.Point)">
+            <summary>
+            Used to convert top window coordinate to widget local ones (for mouse for example).
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Crow.Widget.MouseWheelChanged">
+            <summary>Occurs when mouse wheel is rolled in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseUp">
+            <summary>Occurs when mouse button is released in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseDown">
+            <summary>Occurs when mouse button is pressed in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseClick">
+            <summary>Occurs when mouse button has been pressed then relesed in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseDoubleClick">
+            <summary>Occurs when mouse button has been pressed then relesed 2 times in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseMove">
+            <summary>Occurs when mouse mouve in this object. It bubbles to the root</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseEnter">
+            <summary>Occurs when mouse enter the bounding rectangle of this object</summary>
+        </member>
+        <member name="E:Crow.Widget.MouseLeave">
+            <summary>Occurs when mouse leave the bounds of this object</summary>
+        </member>
+        <member name="E:Crow.Widget.KeyDown">
+            <summary>Occurs when key is pressed when this object is active</summary>
+        </member>
+        <member name="E:Crow.Widget.KeyUp">
+            <summary>Occurs when key is released when this object is active</summary>
+        </member>
+        <member name="E:Crow.Widget.KeyPress">
+            <summary>Occurs when translated key event occurs in the host when this object is active</summary>
+        </member>
+        <member name="E:Crow.Widget.Focused">
+            <summary>Occurs when this object received focus</summary>
+        </member>
+        <member name="E:Crow.Widget.Unfocused">
+            <summary>Occurs when this object loose focus</summary>
+        </member>
+        <member name="E:Crow.Widget.Hover">
+            <summary>Occurs when this widget is hovered by the mouse</summary>
+        </member>
+        <member name="E:Crow.Widget.Unhover">
+            <summary>Occurs when this widget is no longuer the hover one</summary>
+        </member>
+        <member name="E:Crow.Widget.Enabled">
+            <summary>Occurs when this widget is enabled</summary>
+        </member>
+        <member name="E:Crow.Widget.Disabled">
+            <summary>Occurs when the enabled state this object is set to false</summary>
+        </member>
+        <member name="E:Crow.Widget.Initialized">
+            <summary>
+            Occurs when default value and styling are loaded, and for templated control,
+            template is also loaded. Bindings should be functionnal as well.
+            </summary>
+        </member>
+        <member name="E:Crow.Widget.LayoutChanged">
+            <summary>Occurs when one part of the rendering slot changed</summary>
+        </member>
+        <member name="E:Crow.Widget.DataSourceChanged">
+            <summary>Occurs when DataSource changed</summary>
+        </member>
+        <member name="E:Crow.Widget.ParentChanged">
+            <summary>Occurs when the parent has changed</summary>
+        </member>
+        <member name="E:Crow.Widget.LogicalParentChanged">
+            <summary>Occurs when the logical parent has changed</summary>
+        </member>
+        <member name="P:Crow.Widget.Tag">
+            <summary>Random value placeholder</summary>
+        </member>
+        <member name="P:Crow.Widget.CacheEnabled">
+            <summary>
+            If enabled, resulting bitmap of graphic object is cached
+            speeding up rendering of complex object. Default is enabled.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.ClipToClientRect">
+            <summary>
+            If true, rendering of Widget is clipped inside client rectangle
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Name">
+            <summary>
+            Name is used in binding to reference other GraphicObjects inside the graphic tree
+            and by template controls to find special element in their template implementation such
+            as a container or a group to put children in.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.VerticalAlignment">
+            <summary>
+            Vertical alignment inside parent, disabled if height is stretched
+            or top coordinate is not null
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.HorizontalAlignment">
+            <summary>
+            Horizontal alignment inside parent, disabled if width is stretched
+            or left coordinate is not null
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Left">
+            <summary>
+            x position inside parent
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Top">
+            <summary>
+            y position inside parent
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Fit">
+            <summary>
+            Helper property used to set width and height to fit in one call
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Width">
+            <summary>
+            Width of this control, by default inherited from parent. May have special values
+            such as Stretched or Fit. It may be proportionnal or absolute.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Height">
+            <summary>
+            Height of this control, by default inherited from parent. May have special values
+            such as Stretched or Fit. It may be proportionnal or absolute.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.WidthPolicy">
+            <summary>
+            Was Used for binding on dimensions, this property will never hold fixed size, but instead only
+            Fit or Stretched, **with inherited state implementation, it is not longer used in binding**
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.HeightPolicy">
+            <summary>
+            Was Used for binding on dimensions, this property will never hold fixed size, but instead only
+            Fit or Stretched, **with inherited state implementation, it is not longer used in binding**
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Focusable">
+            <summary>
+            Indicate that this object may received focus or not, if not focusable all the descendants are
+            affected.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.HasFocus">
+            <summary>
+            True when this control has the focus, only one control per interface may have it.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.IsActive">
+            <summary>
+            true if this control is active, this means that mouse has been pressed in it and not yet released. It could
+            be used for other two states periferic action.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.IsHover">
+            <summary>
+            true if this control has the pointer hover
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.BubbleEvents">
+            <summary>
+            if false, prevent mouse events to bubble to the parent in any case.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.MouseRepeat">
+            <summary>
+            true if holding mouse button down should trigger multiple click events
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.StickyMouse">
+            <summary>
+            When StickyMouse value is greater than zero and StickyMouseEnabled is true, mouse will be sticked over the widget
+            until x or y delta is greater than the StickyMouse value. This is usefulle for very thin (1 pixel) border that need to
+            be grabbed with the mouse.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.StickyMouseEnabled">
+            <summary>
+            Boolean for enabling or not the sticky mouse mechanic
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.MouseCursor">
+            <summary>
+            Determine Cursor when mouse is Hover.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Background">
+            <summary>
+            background fill of the control, maybe solid color, gradient, image, or svg
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Foreground">
+            <summary>
+            Foreground fill of the control, usage may be different among derived controls
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Font">
+            <summary>
+            Font being used in many controls, it is defined in the base Widget class.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.CornerRadius">
+            <summary>
+            to get rounded corners
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Margin">
+            <summary>
+            This is a single integer for the 4 direction, a gap between the control and it's container,
+            by default it is filled with the background.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Visible">
+            <summary>
+            set the visible state of the control, invisible controls does reserve space in the layouting system.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.IsVisible">
+            <summary>
+            set the visible state of the control, invisible controls does reserve space in the layouting system.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.IsEnabled">
+            <summary>
+            get or set the enabled state, disabling a control will affect focuability and
+            also it's rendering which will be grayed
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.MinimumSize">
+            <summary>
+            Minimal width and  height for this control
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.MaximumSize">
+            <summary>
+            Maximum width and  height for this control, unlimited if null.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.DataSourceType">
+            <summary>
+            Fully qualify type name of expected data source.
+            If set, datasource bindings will be speedup by avoiding reflexion in generated dyn methods.
+            If an object of a different type is set as datasource, bindings will be canceled.
+            It accepts all derived type.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.DataSource">
+            <summary>
+            Seek first logical tree upward if logicalParent is set, or seek graphic tree for
+            a not null dataSource that will be active for all descendants having dataSource=null
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.RootDataLevel">
+            <summary>
+            If true, lock datasource seeking upward in logic or graphic tree to this widget.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Style">
+            <summary>
+            Style key to use for this control
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.Tooltip">
+            <summary>
+            Gets or sets a tooltip to show when mouse stay still over the control.
+            </summary>
+            <remarks>
+            By default, the tooltip container widget that will be shown is defined in '#Crow.Tooltip.template' and the widget
+            tooltip string is interpreted as a single string helper message that may be a binding expression.
+            If the widget Tooltip property start with a '#', the tooltip string will be interpreted as a resource path of
+            a custom IML template to show, which will have its datasource set to the widget triggering the tooltip.
+            </remarks>
+            <value>A single helpt string that may comes from a binding expression, or by starting with a '#',
+            You may provide a custom tooltip template resource path.</value>
+        </member>
+        <member name="M:Crow.Widget.loadDefaultValues">
+            <summary> Loads the default values from XML attributes default </summary>
+        </member>
+        <member name="M:Crow.Widget.IsOrIsInside(Crow.Widget)">
+            <summary>
+            return true if this is contained inside go
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.AllowDrag">
+            <summary>
+            If true, allow widget to be dragged and dropped.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.AllowDrop">
+            <summary>
+            If true, allow widgets of type listed in 'AllowedDropTypes' to be dropped in this widget
+            during drag and drop operations.
+            </summary>
+        </member>
+        <member name="P:Crow.Widget.AllowedDropTypes">
+            <summary>
+            Semicolon separated list of accepted types as dropped widget.
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.onDrag(System.Object,Crow.MouseMoveEventArgs)">
+            <summary>
+            equivalent to mouse move for a dragged widget, no bubbling.
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.onStartDrag(System.Object,Crow.DragDropEventArgs)">
+            <summary>
+            fired when drag and drop operation start
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.onEndDrag(System.Object,Crow.DragDropEventArgs)">
+            <summary>
+             Occured when dragging ends without dropping
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.ClippingRegistration">
+            <summary>
+            Register old and new slot for clipping
+            </summary>
+        </member>
+        <member name="M:Crow.Widget.RegisterClip(Crow.Rectangle)">
+            <summary>
+            Add clip rectangle to this.clipping and propagate up to root
+            </summary>
+            <param name="clip">Clip rectangle</param>
+        </member>
+        <member name="M:Crow.Widget.RegisterForGraphicUpdate">
+            <summary> Full update, if width or height is 'Fit' a layouting is requested, and a redraw is done in any case. </summary>
+        </member>
+        <member name="M:Crow.Widget.RegisterForRedraw">
+            <summary> query an update of the content without layouting changes</summary>
+        </member>
+        <member name="M:Crow.Widget.RegisterForRepaint">
+             <summary>
+             query a repaint, if control is cached, cache will not be updated and simply repainted.
+             if not cached, repaint will trigger the onDraw method.
+             </summary>
+             <remark>
+             This could be usefull in widget with complex drawing, that need some markers on top: the main part
+             of the drawing could take place in the onDraw method, and the markers (single line, rectangle, ...)
+             could be drawn in the Paint method. Such widget must have 'CacheEnabled=true' and to simply update the
+             markers without a full redraw, just call 'RegisterForRepaint'.
+            
+             </remark>
+        </member>
+        <member name="M:Crow.Widget.measureRawSize(Crow.LayoutingType)">
+            <summary> return size of content + margins </summary>
+        </member>
+        <member name="M:Crow.Widget.ChildrenLayoutingConstraints(Crow.ILayoutable,Crow.LayoutingType@)">
+            <summary>
+            Used to prevent some layouting type in children. For example, in the GenericStack,
+            x layouting is dismissed in the direction of the stacking to let the parent
+            arrange children in the x direction.
+            </summary>
+            <param name="layoutable">The children that is calling the constraints</param>
+            <param name="layoutType">The currently registering layouting types</param>
+        </member>
+        <member name="F:Crow.Widget.layoutMutex">
+            <summary> Query a layouting for the type pass as parameter, redraw only if layout changed. </summary>
+        </member>
+        <member name="M:Crow.Widget.OnLayoutChanges(Crow.LayoutingType)">
+            <summary> trigger dependant sizing component update </summary>
+        </member>
+        <member name="M:Crow.Widget.UpdateLayout(Crow.LayoutingType)">
+            <summary> Update layout component only one at a time, this is where the computation of alignement
+            and size take place.
+            The redrawing will only be triggered if final slot size has changed </summary>
+            <returns><c>true</c>, if layouting was possible, <c>false</c> if conditions were not
+            met and LQI has to be re-queued</returns>
+        </member>
+        <member name="M:Crow.Widget.onDraw(Crow.Drawing.Context)">
+            <summary> This is the common overridable drawing routine to create new widget </summary>
+        </member>
+        <member name="M:Crow.Widget.RecreateCache">
+            <summary>
+            Internal drawing context creation on a cached surface limited to slot size
+            this trigger the effective drawing routine </summary>
+        </member>
+        <member name="M:Crow.Widget.Paint(Crow.Drawing.Context)">
+            <summary> Chained painting routine on the parent context of the actual cached version
+            of the widget </summary>
+        </member>
+        <member name="M:Crow.Widget.PointIsIn(Crow.Point@)">
+            <summary>
+            Recursive local coordinate point test.
+            After test on parent, point m is in local coord system.
+            </summary>
+            <returns>return true, if point is in the bounds of this control</returns>
+            <param name="m">by ref point to test, init value is not kept</param>
+        </member>
+        <member name="M:Crow.Widget.onMouseDown(System.Object,Crow.MouseButtonEventArgs)">
+            <summary>
+            Default mouse button press method. The `MouseDown` event is raised from withing it.
+            </summary>
+            <remarks>
+            See `CrowEventArgs` for details on interface event handling.
+            </remarks>
+            <param name="sender">Sender of the event</param>
+            <param name="e">mouse button pressed event arguments</param>
+        </member>
+        <member name="M:Crow.Widget.onMouseUp(System.Object,Crow.MouseButtonEventArgs)">
+            <summary>
+            Default mouse button release method. The `MouseUp` event is raised from withing it.
+            </summary>
+            <remarks>
+            See `CrowEventArgs` for details on interface event handling.
+            </remarks>
+            <param name="sender">Sender of the event</param>
+            <param name="e">mouse button release event arguments</param>
+        </member>
+        <member name="M:Crow.Widget.onMouseClick(System.Object,Crow.MouseButtonEventArgs)">
+            <summary>
+            Default mouse click method. A click is a press and release without mouving combination.
+            </summary>
+            <param name="sender">The Sender of the event</param>
+            <param name="e">event arguments</param>
+        </member>
+        <member name="M:Crow.Widget.onMouseDoubleClick(System.Object,Crow.MouseButtonEventArgs)">
+            <summary>
+            Default mouse double click method. A double click is two consecutive press and release without mouving combination.
+            within a delay defined by `Interface.DOUBLECLICK_TRESHOLD`
+            </summary>
+            <param name="sender">The Sender of the event</param>
+            <param name="e">event arguments</param>
+        </member>
+        <member name="M:Crow.Widget.unshownPostActions">
+            <summary>
+            Checks to handle when widget is removed from the visible graphic tree
+            </summary>
+        </member>
+        <member name="M:Crow.Window.moveAndResize(System.Int32,System.Int32,Crow.Window.Direction)">
+            <summary>
+            Moves the and resize with the same function entry point, the direction give the kind of move or resize
+            </summary>
+            <param name="XDelta">mouse delta on the X axis</param>
+            <param name="YDelta">mouse delta on the Y axis</param>
+            <param name="currentDirection">Current Direction of the operation, none for moving, other value for resizing in the given direction</param>
+        </member>
+        <member name="T:Crow.Wrapper">
+            <summary>
+            group control that arrange its children in a direction and jump to
+            the next line or row when no room is left
+            </summary>
+        </member>
+    </members>
+</doc>
